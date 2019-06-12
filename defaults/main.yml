@@ -1,0 +1,50 @@
+---
+# defaults file for ansible-role-rancher
+rancher_create_dns_records: true
+rancher_dns_server: dc.dev.noe.local
+rancher_dns_zone: dev.noe.local
+
+rancher_create_vms: true
+rancher_user: packer
+rancher_nodes:
+    - hostname: rancher-0
+      type: master
+      ip: 172.31.51.30
+      netmask: 255.255.255.0
+      gw: 172.31.51.254
+      dns_servers:
+        - 172.31.3.2
+    - hostname: rancher-1
+      type: master
+      ip: 172.31.51.31
+      gw: 172.31.51.254
+      netmask: 255.255.255.0
+      dns_servers:
+        - 172.31.3.2
+    - hostname: rancher-2
+      type: master
+      ip: 172.31.51.32
+      gw: 172.31.51.254
+      netmask: 255.255.255.0
+      dns_servers:
+        - 172.31.3.2
+
+rancher_vmware_config:
+  hostname: vcenter.noe.local
+  username: administrator@vsphere.local
+  password: changeme
+  folder: rancher
+  datacenter: garage
+  cluster: r610
+  datastore: vsanDatastore
+  template: template-centos-7.6-1560136075
+  hardware:
+    num_cpus: 2
+    memory_mb: 8192
+  guest_id: centos7_64Guest
+  network_name: vxw-dvs-62-virtualwire-4-sid-5001-openshift
+  disk:
+    - size_gb: 40
+      type: thin
+    - size_gb: 200
+      type: thin

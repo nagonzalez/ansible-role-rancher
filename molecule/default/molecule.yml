@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  provider:
+    name: virtualbox
+lint:
+  name: yamllint
+platforms:
+  - name: rancher-1
+    box: centos/7
+    cpus: 1
+    memory: 4096
+    interfaces:
+      - auto_config: true
+        ip: 172.28.128.3
+        network_name: private_network
+        type: static
+provisioner:
+  name: ansible
+  inventory:
+    host_vars:
+      rancher-1:
+        # foo: bar
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

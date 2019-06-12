@@ -1,0 +1,12 @@
+---
+
+- name: Add DNS records for rancher hosts
+  nsupdate:
+    server: "{{ rancher_dns_server }}"
+    zone: "{{ rancher_dns_zone }}"
+    record: "{{ item.hostname }}"
+    value: "{{ item.ip }}"
+    type: "A"
+  loop: "{{ rancher_nodes }}"
+  delegate_to: 127.0.0.1
+  run_once: true

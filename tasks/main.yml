@@ -1,0 +1,16 @@
+---
+# tasks file for ansible-role-rancher
+
+# configure dns records
+- include: dns.yml
+  when: rancher_create_dns_records
+
+# create rancher vms
+- include: vm.yml
+  when: rancher_create_vms
+
+# install docker
+- include: docker.yml
+
+# install rancher requirements
+- include: requirements.yml
