@@ -48,7 +48,7 @@
 - name: add ssh private key
   copy:
     dest: "/home/{{ rancher_user }}/.ssh/id_rsa"
-    owner: {{ rancher_user }}
-    group: {{ rancher_user }}
+    owner: "{{ rancher_user }}"
+    group: "{{ rancher_user }}"
     mode: 0600
     content: "{{ rancher_ssh_key }}"
