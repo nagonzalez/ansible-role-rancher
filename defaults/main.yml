@@ -21,27 +21,27 @@ rancher_ssh_key: |
   -----END RSA PRIVATE KEY-----
 
 rancher_nodes:
-    - hostname: rancher-0
-      type: master
-      ip: 172.31.51.30
-      netmask: 255.255.255.0
-      gw: 172.31.51.254
-      dns_servers:
-        - 172.31.3.2
-    - hostname: rancher-1
-      type: master
-      ip: 172.31.51.31
-      gw: 172.31.51.254
-      netmask: 255.255.255.0
-      dns_servers:
-        - 172.31.3.2
-    - hostname: rancher-2
-      type: master
-      ip: 172.31.51.32
-      gw: 172.31.51.254
-      netmask: 255.255.255.0
-      dns_servers:
-        - 172.31.3.2
+    # - hostname: rancher-0
+    #   type: master
+    #   ip: 172.31.51.30
+    #   netmask: 255.255.255.0
+    #   gw: 172.31.51.254
+    #   dns_servers:
+    #     - 172.31.3.2
+    # - hostname: rancher-1
+    #   type: master
+    #   ip: 172.31.51.31
+    #   gw: 172.31.51.254
+    #   netmask: 255.255.255.0
+    #   dns_servers:
+    #     - 172.31.3.2
+    # - hostname: rancher-2
+    #   type: master
+    #   ip: 172.31.51.32
+    #   gw: 172.31.51.254
+    #   netmask: 255.255.255.0
+    #   dns_servers:
+    #     - 172.31.3.2
 
 rancher_vmware_config:
   hostname: vcenter.noe.local
@@ -58,7 +58,7 @@ rancher_vmware_config:
   guest_id: centos7_64Guest
   network_name: vxw-dvs-62-virtualwire-4-sid-5001-openshift
   disk:
-    - size_gb: 40
-      type: thin
-    - size_gb: 200
-      type: thin
+    # - size_gb: 40
+    #   type: thin
+    # - size_gb: 200
+    #   type: thin
