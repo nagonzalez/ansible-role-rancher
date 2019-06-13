@@ -22,19 +22,19 @@
 
 - name: download rke
   get_url:
-    url: https://github.com/rancher/rke/releases/download/v0.2.4/rke_linux-amd64
+    url: "https://github.com/rancher/rke/releases/download/v{{ rancher_rke_version }}/rke_linux-amd64"
     dest: /sbin/rke
     mode: 0755
 
 - name: download kubectl
   get_url:
-    url: https://storage.googleapis.com/kubernetes-release/release/v1.14.3/bin/linux/amd64/kubectl
+    url: "https://storage.googleapis.com/kubernetes-release/release/v{{ rancher_kubectl_version }}/bin/linux/amd64/kubectl"
     dest: /sbin/kubectl
     mode: 0755
 
 - name: download helm
   unarchive:
-    src: "https://storage.googleapis.com/kubernetes-helm/helm-v2.14.1-linux-amd64.tar.gz"
+    src: "https://storage.googleapis.com/kubernetes-helm/helm-v{{ rancher_helm_version }}-linux-amd64.tar.gz"
     dest: /tmp
     remote_src: true
 
@@ -47,11 +47,8 @@
 
 - name: add ssh private key
   copy:
-    dest: /home/packer/.ssh/id_rsa
-    owner: packer
-    group: packer
+    dest: "/home/{{ rancher_user }}/.ssh/id_rsa"
+    owner: {{ rancher_user }}
+    group: {{ rancher_user }}
     mode: 0600
-    content: |
-        -----BEGIN RSA PRIVATE KEY-----
-        changeme
-        -----END RSA PRIVATE KEY-----
+    content: "{{ rancher_ssh_key }}"

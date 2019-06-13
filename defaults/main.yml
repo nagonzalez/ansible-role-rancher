@@ -1,11 +1,25 @@
 ---
 # defaults file for ansible-role-rancher
+rancher_rke_version: 0.2.4
+rancher_kubectl_version: 1.14.3
+rancher_helm_version: 2.14.1
+
+rancher_docker_packages:
+  - docker-ce-18.09.6-3.el7
+  - docker-ce-cli-18.09.6-3.el7
+  - containerd.io-1.2.5-3.1.el7
+
 rancher_create_dns_records: true
 rancher_dns_server: dc.dev.noe.local
 rancher_dns_zone: dev.noe.local
 
 rancher_create_vms: true
 rancher_user: packer
+rancher_ssh_key: |
+  -----BEGIN RSA PRIVATE KEY-----
+  changeme
+  -----END RSA PRIVATE KEY-----
+
 rancher_nodes:
     - hostname: rancher-0
       type: master
