@@ -3,11 +3,11 @@
 
 # configure dns records
 - include: dns.yml
-  when: rancher_create_dns_records
+  when: rancher_create_dns_records | bool
 
 # create rancher vms
 - include: vm.yml
-  when: rancher_create_vms
+  when: rancher_create_vms | bool
 
 # install docker
 - include: docker.yml
