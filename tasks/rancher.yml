@@ -1,0 +1,17 @@
+---
+
+- name: create directory to hold rancher configs
+  file:
+    state: directory
+    path: "/home/{{ rancher_user }}/rancher"
+    owner: "{{ rancher_user }}"
+    group: "{{ rancher_user }}"
+    mode: 0600
+
+- name: copy rancher-cluster.yml
+  template:
+    src: rancher-cluster.yml.j2
+    dest: "/home/{{ rancher_user }}/rancher/rancher-cluster.yml"
+    owner: "{{ rancher_user }}"
+    group: "{{ rancher_user }}"
+    mode: 0600

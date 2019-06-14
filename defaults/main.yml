@@ -3,6 +3,92 @@
 rancher_api:
   hostname: rancher.dev.noe.local
   ip: 172.31.50.254
+rancher_ca_crt:
+  -----BEGIN CERTIFICATE-----
+  MIIEojCCAwqgAwIBAgIRALYZU/angGsF9aZWnxwncqEwDQYJKoZIhvcNAQELBQAw
+  aTEeMBwGA1UEChMVbWtjZXJ0IGRldmVsb3BtZW50IENBMR8wHQYDVQQLDBZub2Uu
+  Z29uemFsZXpATkdPTloxTUwyMSYwJAYDVQQDDB1ta2NlcnQgbm9lLmdvbnphbGV6
+  QE5HT05aMU1MMjAeFw0xOTA2MTQwNTQ1MjFaFw0yOTA2MTQwNTQ1MjFaMGkxHjAc
+  BgNVBAoTFW1rY2VydCBkZXZlbG9wbWVudCBDQTEfMB0GA1UECwwWbm9lLmdvbnph
+  bGV6QE5HT05aMU1MMjEmMCQGA1UEAwwdbWtjZXJ0IG5vZS5nb256YWxlekBOR09O
+  WjFNTDIwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQC/PlfKl4a6XTuA
+  9d3aNrNhvONifeJ8Ef+dkTEdUqPRb7CWKRxff2FHTnucDNfNYInaLVtVdL15SxD3
+  ShmHd3LTHtENOnkcEX/QbwLuUm04p0D+KnnoLPFU0DDWLQgRXN+xP9ATcP0IyGSm
+  QZGkVlG+YmE/gWUGWK35X9rzwI8JL1guwekAD4TP3kUu52rSW1QfayqfyTU+BGCr
+  VzsA3G0JYq4Y5SPImINFLp17Vt5uINuPz8SjmbONLoGFwQCiU9hrc4ItPpaJl16V
+  Ekrh9uQ6ZW4ro3McFFlWTYBbKLg65iY+eQ3saSRoGwjvLcGODTU0xzTeqyjhr0kD
+  /KhBlw4lqTLshwV4im81qkuZjsWkno4RwjDo4GKmGlXxquamP1Yr7EE75BTf0nMm
+  iuvRDD0fjOJu19KeisbmZO9vKIiEWi//MGRSFwbbkepVEomahVjZrsmxv3PBpEbG
+  i3gZZPgpDVHbyVDuVZ76QZMwHzZg3K/eIiLqEa3KpoCMGQPeyvUCAwEAAaNFMEMw
+  DgYDVR0PAQH/BAQDAgIEMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFAFc
+  0DHLKdcA66sGT06eu5r00nBnMA0GCSqGSIb3DQEBCwUAA4IBgQANSSukL2drWU3I
+  edxUuSd5VcpTu7K4AeOPvgY6dDeQMDEEJopu9d4BplTwz8NaeAykkCeU9PfLEClz
+  GY2/0f8YF/tDd4+Cx1eaDR3GxaobqBL8Bzj1gHlTox2Nc7W0cg1/JzUcPHP+tMPP
+  cckhurNb27mbLCqlJoV5w4AzlYIKETPsqmFj89moffu+uCoY8sC/Qa6vMmaHGkpS
+  LKTcZohOYgZR8oT9q50nuaaZ72Xj51sZGDrpYVOTO6Cq5kiX9Eu4dGZJhJEMbKhx
+  2DIy2WQWzF6y0b6VeKcj4omA/iBv6/6PGOX1fGAsWJa8rrjBWpQNEA78T0t1z3lO
+  Ot5eXI8PaYH0MWaiunhNemy/JfzOFbg1jBa27htpb1TqhM+8ZvHVxvgKKyrummhf
+  9fOwfwZk+fl0IwHsp98tvfgmdY+fEj8cEGr5fxEQ7qG5zS8RUpPLkbqzYB5X71Mc
+  SZ3B1mxWqAEoIa9Uk4z8K/eRp2wcANjFSsq+KdROH9giVsgy+aU=
+  -----END CERTIFICATE-----
+rancher_ingress:
+  crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIEMDCCApigAwIBAgIRAM88CpT8P/9y3TlpNarb9EYwDQYJKoZIhvcNAQELBQAw
+    aTEeMBwGA1UEChMVbWtjZXJ0IGRldmVsb3BtZW50IENBMR8wHQYDVQQLDBZub2Uu
+    Z29uemFsZXpATkdPTloxTUwyMSYwJAYDVQQDDB1ta2NlcnQgbm9lLmdvbnphbGV6
+    QE5HT05aMU1MMjAeFw0xOTA2MTQwNjE2MTVaFw0yOTA2MTQwNjE2MTVaMEoxJzAl
+    BgNVBAoTHm1rY2VydCBkZXZlbG9wbWVudCBjZXJ0aWZpY2F0ZTEfMB0GA1UECwwW
+    bm9lLmdvbnphbGV6QE5HT05aMU1MMjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+    AQoCggEBAMcid+X0j1ErRzWplTzp8myUw+FcjyLKMwyjr/lnfJLJgMUkuB8MtSW9
+    +aVlh/6ZTqxLMil2hr3fZgVezVCkaEGlcxd+AqvY+YC3Af6r+SyZ5E4RNLpJtlKi
+    CJlpflTxzieKcme02+zzJFxwZ3vUi65Lxiw1fse1zYViNecnjUK2xxZ0HbKO+bXB
+    dsEVoazZTDYchdi3yYLS/vouzQtf3mleG4nJVcu0xVDRvr8+LA8XWVKTesj4Fpsq
+    qJld5EaEsq7vg4MxyuPUKkkKFIctvbRTIuxuia3KloAz7bGHpB/APU0IRYv6+G6W
+    49WUxoGFvEFOLK79TssgOA3n+U/VRlECAwEAAaNyMHAwDgYDVR0PAQH/BAQDAgWg
+    MBMGA1UdJQQMMAoGCCsGAQUFBwMBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAU
+    AVzQMcsp1wDrqwZPTp67mvTScGcwGgYDVR0RBBMwEYIPKi5kZXYubm9lLmxvY2Fs
+    MA0GCSqGSIb3DQEBCwUAA4IBgQC+VMo/j1pJpxSgUxweqjGirIot8BjG7fTN9Aj2
+    OX4MMdJ0ceV9oDY7lL+QiwcqLRmfHvekXzUBP/vGNakUJaqRlqsnvcs5wYV72A17
+    YnqJn5XDbTovL3qSUgurU4zhw5cbqhbDC5SXXmb2rNIRT0uhCOvdCPxgeQk2Q1Y0
+    c7/oa3m1pvVC7D22XdQLe2a/UrXWKTvZ5F7GCGn6IVJZCHHKuut1X9JEJ0K2Aioz
+    Rs4XD7/Gffc+X8eb0RoWCaSpSwlS+gyJUv/LBHov4LTnA9QARBteUIuAHdKFANyK
+    PpvJ9e+VMzupezKrLMi/WW5PRxpdWsqEVlxdmJrEqjVGQsjPVdRm6MEhAF036hOa
+    5lfnKMQwDeEsPYAto/keTAC5duv8+FX3K0p3havuVKD1MtXT3j+g/FxRsHof5vYW
+    E1fAlbBoHf0fMH1IGmA1S73CF+mGGB82RppMclGY2VYm7n+ZDri4E55HYaDoewgB
+    tvHN8Mvk+fuRZQeFkvdshr5wxMg=
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    MIIEojCCAwqgAwIBAgIRALYZU/angGsF9aZWnxwncqEwDQYJKoZIhvcNAQELBQAw
+    aTEeMBwGA1UEChMVbWtjZXJ0IGRldmVsb3BtZW50IENBMR8wHQYDVQQLDBZub2Uu
+    Z29uemFsZXpATkdPTloxTUwyMSYwJAYDVQQDDB1ta2NlcnQgbm9lLmdvbnphbGV6
+    QE5HT05aMU1MMjAeFw0xOTA2MTQwNTQ1MjFaFw0yOTA2MTQwNTQ1MjFaMGkxHjAc
+    BgNVBAoTFW1rY2VydCBkZXZlbG9wbWVudCBDQTEfMB0GA1UECwwWbm9lLmdvbnph
+    bGV6QE5HT05aMU1MMjEmMCQGA1UEAwwdbWtjZXJ0IG5vZS5nb256YWxlekBOR09O
+    WjFNTDIwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQC/PlfKl4a6XTuA
+    9d3aNrNhvONifeJ8Ef+dkTEdUqPRb7CWKRxff2FHTnucDNfNYInaLVtVdL15SxD3
+    ShmHd3LTHtENOnkcEX/QbwLuUm04p0D+KnnoLPFU0DDWLQgRXN+xP9ATcP0IyGSm
+    QZGkVlG+YmE/gWUGWK35X9rzwI8JL1guwekAD4TP3kUu52rSW1QfayqfyTU+BGCr
+    VzsA3G0JYq4Y5SPImINFLp17Vt5uINuPz8SjmbONLoGFwQCiU9hrc4ItPpaJl16V
+    Ekrh9uQ6ZW4ro3McFFlWTYBbKLg65iY+eQ3saSRoGwjvLcGODTU0xzTeqyjhr0kD
+    /KhBlw4lqTLshwV4im81qkuZjsWkno4RwjDo4GKmGlXxquamP1Yr7EE75BTf0nMm
+    iuvRDD0fjOJu19KeisbmZO9vKIiEWi//MGRSFwbbkepVEomahVjZrsmxv3PBpEbG
+    i3gZZPgpDVHbyVDuVZ76QZMwHzZg3K/eIiLqEa3KpoCMGQPeyvUCAwEAAaNFMEMw
+    DgYDVR0PAQH/BAQDAgIEMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFAFc
+    0DHLKdcA66sGT06eu5r00nBnMA0GCSqGSIb3DQEBCwUAA4IBgQANSSukL2drWU3I
+    edxUuSd5VcpTu7K4AeOPvgY6dDeQMDEEJopu9d4BplTwz8NaeAykkCeU9PfLEClz
+    GY2/0f8YF/tDd4+Cx1eaDR3GxaobqBL8Bzj1gHlTox2Nc7W0cg1/JzUcPHP+tMPP
+    cckhurNb27mbLCqlJoV5w4AzlYIKETPsqmFj89moffu+uCoY8sC/Qa6vMmaHGkpS
+    LKTcZohOYgZR8oT9q50nuaaZ72Xj51sZGDrpYVOTO6Cq5kiX9Eu4dGZJhJEMbKhx
+    2DIy2WQWzF6y0b6VeKcj4omA/iBv6/6PGOX1fGAsWJa8rrjBWpQNEA78T0t1z3lO
+    Ot5eXI8PaYH0MWaiunhNemy/JfzOFbg1jBa27htpb1TqhM+8ZvHVxvgKKyrummhf
+    9fOwfwZk+fl0IwHsp98tvfgmdY+fEj8cEGr5fxEQ7qG5zS8RUpPLkbqzYB5X71Mc
+    SZ3B1mxWqAEoIa9Uk4z8K/eRp2wcANjFSsq+KdROH9giVsgy+aU=
+    -----END CERTIFICATE-----
+  key: |
+    -----BEGIN PRIVATE KEY-----
+    changme
+    -----END PRIVATE KEY-----
 rancher_rke_version: 0.2.4
 rancher_kubectl_version: 1.14.3
 rancher_helm_version: 2.14.1
@@ -25,21 +111,21 @@ rancher_ssh_key: |
 
 rancher_nodes:
     # - hostname: rancher-0
-    #   type: master
+    #   role: [controlplane,etcd,worker]
     #   ip: 172.31.51.30
     #   netmask: 255.255.255.0
     #   gw: 172.31.51.254
     #   dns_servers:
     #     - 172.31.3.2
     # - hostname: rancher-1
-    #   type: master
+    #   role: [controlplane,etcd,worker]
     #   ip: 172.31.51.31
     #   gw: 172.31.51.254
     #   netmask: 255.255.255.0
     #   dns_servers:
     #     - 172.31.3.2
     # - hostname: rancher-2
-    #   type: master
+    #   role: [controlplane,etcd,worker]
     #   ip: 172.31.51.32
     #   gw: 172.31.51.254
     #   netmask: 255.255.255.0
