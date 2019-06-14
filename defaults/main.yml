@@ -1,5 +1,8 @@
 ---
 # defaults file for ansible-role-rancher
+rancher_api:
+  hostname: rancher.dev.noe.local
+  ip: 172.31.50.254
 rancher_rke_version: 0.2.4
 rancher_kubectl_version: 1.14.3
 rancher_helm_version: 2.14.1
