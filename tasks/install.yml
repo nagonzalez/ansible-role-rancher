@@ -7,6 +7,7 @@
     owner: "{{ rancher_user }}"
     group: "{{ rancher_user }}"
     mode: 0600
+  run_once: true
 
 - name: copy rancher-cluster.yml
   template:
@@ -15,3 +16,4 @@
     owner: "{{ rancher_user }}"
     group: "{{ rancher_user }}"
     mode: 0600
+  run_once: true
