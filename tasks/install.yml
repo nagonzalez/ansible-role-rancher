@@ -6,7 +6,7 @@
     path: "/home/{{ rancher_user }}/rancher"
     owner: "{{ rancher_user }}"
     group: "{{ rancher_user }}"
-    mode: 0600
+    mode: 0700
   run_once: true
 
 - name: copy rancher-cluster.yml
