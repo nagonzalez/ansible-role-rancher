@@ -16,4 +16,6 @@
 - include: requirements.yml
 
 # install rancher
-- include: rancher.yml
+- include: install.yml
+  tags:
+    - rancher_install

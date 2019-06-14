@@ -3,7 +3,7 @@ nodes:
   - address: {{ node['ip'] }} # hostname or IP to access nodes
     user: {{ rancher_user }} # root user (usually 'root')
     role: {{ node['role'] }} # K8s roles for node
-{% end for %}
+{% endfor %}
 
 services:
   etcd:
