@@ -1,4 +1,20 @@
 ---
+- name: ensure rancher user .ssh directory exists
+  file:
+    state: directory
+    path: "/home/{{ rancher_user }}/.ssh"
+    mode: 0700
+    owner: "{{ rancher_user }}"
+    group: "{{ rancher_user }}"
+
+- name: add ssh private key
+  copy:
+    dest: "/home/{{ rancher_user }}/.ssh/id_rsa"
+    owner: "{{ rancher_user }}"
+    group: "{{ rancher_user }}"
+    mode: 0600
+    content: "{{ rancher_user_ssh_key }}"
+
 - name: Remove swapfile from /etc/fstab
   mount:
     name: swap
@@ -44,11 +60,3 @@
     dest: /sbin/helm
     remote_src: true
     mode: 0755
-
-- name: add ssh private key
-  copy:
-    dest: "/home/{{ rancher_user }}/.ssh/id_rsa"
-    owner: "{{ rancher_user }}"
-    group: "{{ rancher_user }}"
-    mode: 0600
-    content: "{{ rancher_ssh_key }}"

@@ -1,5 +1,5 @@
 ---
-- name:  create rancher VMs
+- name: create rancher VMs
   vmware_guest:
     hostname: "{{ rancher_vmware_config['hostname'] }}"
     username: "{{ rancher_vmware_config['username'] }}"

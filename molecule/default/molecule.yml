@@ -8,7 +8,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: rancher-1
+  - name: rancher
     box: centos/7
     cpus: 1
     memory: 4096
@@ -19,12 +19,24 @@ platforms:
         type: static
 provisioner:
   name: ansible
+  log: true
   inventory:
     host_vars:
-      rancher-1:
-        # foo: bar
+      rancher:
+        rancher_nodes:
+          - hostname: rancher
+            role: '[controlplane,etcd,worker]'
+            ip: 172.28.128.3
+            netmask: 255.255.255.0
+            gw: 172.28.128.1
+            dns_servers:
+              - 172.31.3.2
   lint:
     name: ansible-lint
+    options:
+      x: [
+        "204"  # Lines should be no longer than 160 chars
+      ]
 verifier:
   name: testinfra
   lint:
