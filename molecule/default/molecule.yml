@@ -23,14 +23,13 @@ provisioner:
   inventory:
     host_vars:
       rancher:
-        rancher_nodes:
-          - hostname: rancher
-            role: '[controlplane,etcd,worker]'
-            ip: 172.28.128.3
-            netmask: 255.255.255.0
-            gw: 172.28.128.1
-            dns_servers:
-              - 172.31.3.2
+        rancher_rke_install: true
+        rancher_helm_chart_install: true
+        rancher_letsencrypt_setup: true
+        rke_nodes:
+          - address: 172.28.128.3
+            user: vagrant
+            role: [controlplane, etcd, worker]
   lint:
     name: ansible-lint
     options:

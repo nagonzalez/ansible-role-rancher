@@ -6,12 +6,10 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-ansible = "==2.7.11"
-dnspython = "==1.16.0"
+ansible = "==2.8.1"
 molecule = "==2.20.1"
+pyhelm = "==0.1.5"
 python-vagrant = "==0.5.15"
-pyvmomi = "==6.7.1.2018.12"
-requests = "==2.22.0"
 
 [requires]
-python_version = "2.7"
+python_version = "2.7.16"

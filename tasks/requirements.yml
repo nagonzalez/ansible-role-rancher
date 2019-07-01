@@ -15,31 +15,10 @@
     mode: 0600
     content: "{{ rancher_user_ssh_key }}"
 
-- name: Remove swapfile from /etc/fstab
-  mount:
-    name: swap
-    fstype: swap
-    state: absent
-
-- name: gather facts
-  setup:
-
-- name: Disable swap
-  command: swapoff -a
-  when: ansible_swaptotal_mb > 0
-
-- name: set net.bridge.bridge-nf-call-iptables
-  sysctl:
-    name: net.bridge.bridge-nf-call-iptables
-    value: 1
-    sysctl_set: yes
-    state: present
-    reload: yes
-
 - name: download rke
   get_url:
     url: "https://github.com/rancher/rke/releases/download/v{{ rancher_rke_version }}/rke_linux-amd64"
-    dest: /sbin/rke
+    dest: /usr/local/bin/rke
     mode: 0755
 
 - name: download kubectl

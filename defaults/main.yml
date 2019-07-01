@@ -1,133 +1,17 @@
 ---
 # defaults file for ansible-role-rancher
-rancher_api:
-  hostname: rancher.172.28.128.3.xip.io
-  ip: 172.28.128.3
-rancher_ca_crt:
-  -----BEGIN CERTIFICATE-----
-  MIIEojCCAwqgAwIBAgIRAJ2WzPQEoyjvZmsZccwebk4wDQYJKoZIhvcNAQELBQAw
-  aTEeMBwGA1UEChMVbWtjZXJ0IGRldmVsb3BtZW50IENBMR8wHQYDVQQLDBZub2Uu
-  Z29uemFsZXpATkdPTloxTUwxMSYwJAYDVQQDDB1ta2NlcnQgbm9lLmdvbnphbGV6
-  QE5HT05aMU1MMTAeFw0xODA4MzEwNDAxMTFaFw0yODA4MzEwNDAxMTFaMGkxHjAc
-  BgNVBAoTFW1rY2VydCBkZXZlbG9wbWVudCBDQTEfMB0GA1UECwwWbm9lLmdvbnph
-  bGV6QE5HT05aMU1MMTEmMCQGA1UEAwwdbWtjZXJ0IG5vZS5nb256YWxlekBOR09O
-  WjFNTDEwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQDUqBQY+TWf0pe5
-  Zvt7xLOe8XVlRSMOOjOTS+GBYak8IAAGt6vMPqhIyt4mtvegUhrJfnlqMXFMIPrI
-  Wq/6DWsnovlumn1IwmGtE5TGoFR1DiKZFtcWVRriLzumoAIgAVCxfCt+gYj04QXh
-  4F2BUuAIVc87W4bUvoyEmYWHKlDb2BeXv5Y/u+a2QZ1AXi6Gtl05y9RG6dl9PZUs
-  aKGwfZDY0mfC4jRb7e1KVZm0ExRefPC0/RPQ9whiSt1v91exNgwCdB++PIhz/Jxn
-  NJu0xykTIAJB91vkWGnfxeiXjvR9pEEARhqwBm+aAD55OP7sqgM1WRzHupdC/+jW
-  4f98B0LAfqiH0n2G3k7AUEA3fUUzINo2NOop3R95QTJ6n9U8yGluP55oc4EcIjC+
-  X7xx9wrIGRqrqOEzaqbGuv1JdFripGsKjSKeCpOF9DF/tOvcuBrlnSqDLstTmCAm
-  zFJ4e5SA+hV563RdnSCwGmizQ/aRBeslfcbHbOo4nSyyIOe5j6ECAwEAAaNFMEMw
-  DgYDVR0PAQH/BAQDAgIEMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFLz+
-  4e//Fb8e3ZYpICEgLotQzISXMA0GCSqGSIb3DQEBCwUAA4IBgQBGacro6zI7+S+y
-  6upDjWA0cQOX4ZzwEXsYhjhoCnHl3kjXQgWWDGXa/2LO+/Wbt65Xrxl5oY7yYBZ7
-  XR0NoOm/9ffGlzc03xnkpH2HsrG66SnpjtwDY5MTMy/EC/G1P2cVgfT6B1uv0K6F
-  WBB4rH/BxTSCV+5IR8Sj+V4UZF3Q4Zn26Hqe6TNIL3X8R2gxlxqb6GGCR8ibE4vz
-  bu9lIt1X7IkNZQFo8zfuNpQy08ZITmDrOEzJTSD2DgCh5Tmyj90fY97VeW3DO/Cy
-  bN2Pkb7A6/wObVEoYGp6MvN3P8DqCdi7L9aYWj9eOvbVwlfvpIVrMk5CNxFl3RK2
-  bslzbEwPib2BI433iqF4wYGCTBYEWsifplT2BmgQYG+stJpINVtuW5gJNNRwF8Gq
-  Bye7QHUVdi8Z6dRPuZXSOSUlIFzQsvu5A1/oTAa6oQ4xcf3FHkSLN71fegDc+O7Q
-  KfYbBEmxi5zlzS50JM4CGgmGu2ceQoetmsdvb5+jsxwQqb0cI5Y=
-  -----END CERTIFICATE-----
-rancher_ingress:
-  crt: |
-    -----BEGIN CERTIFICATE-----
-    MIIENjCCAp6gAwIBAgIRAN0oNFYhSZkuI4abEMNRO6owDQYJKoZIhvcNAQELBQAw
-    aTEeMBwGA1UEChMVbWtjZXJ0IGRldmVsb3BtZW50IENBMR8wHQYDVQQLDBZub2Uu
-    Z29uemFsZXpATkdPTloxTUwxMSYwJAYDVQQDDB1ta2NlcnQgbm9lLmdvbnphbGV6
-    QE5HT05aMU1MMTAeFw0xOTA2MTgwMjUyMjFaFw0yOTA2MTgwMjUyMjFaMEoxJzAl
-    BgNVBAoTHm1rY2VydCBkZXZlbG9wbWVudCBjZXJ0aWZpY2F0ZTEfMB0GA1UECwwW
-    bm9lLmdvbnphbGV6QE5HT05aMU1MMjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
-    AQoCggEBALRmk/FYj/Ry1BpyoB0DKFoEi2P6krzrjT4ukpieR8gp1VO76xL7rjsV
-    tV+864zgjwkH7zT/xChXqdTynUFjXYe1YYUN+FKfYZ9u5AxYuLNpUQ65ZTNmnf8f
-    pgj+xQcQef3M9GoILhAnEWuErX7vnfDiZoBYeubvdsL9cqlB6SkElQXi+z+iqfgN
-    8d5sz09ymt8QZd9Hk8/LVG8f9sBnOTcvMFsSI2/hOp/FYnwvutz+8ZQxfprWouKZ
-    KKvRQCSHQDx50gWJIBNyIBVks2NPyEJYQi9GoRw2sPsN+yL0LlzzwBtjgL+rA5WV
-    xWMyD4XLVKeVODZH8ePhnh8ufnzrl30CAwEAAaN4MHYwDgYDVR0PAQH/BAQDAgWg
-    MBMGA1UdJQQMMAoGCCsGAQUFBwMBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAU
-    vP7h7/8Vvx7dlikgISAui1DMhJcwIAYDVR0RBBkwF4IVKi4xNzIuMjguMTI4LjMu
-    eGlwLmlvMA0GCSqGSIb3DQEBCwUAA4IBgQASzZCEzy22GpchuYB2RgvcDxKxFC0k
-    QSGX3mtEzidg37Qv256U5Y5x6gPk9L4ENSCMxMWsXYcNyAjBQ5P+CQXwHRQml59l
-    wsNjn6Z8XDCOpjPSfjaqwnRt49CMxYdfk+0Xp8lELiYayUwgn2w+d6OwgUSSWri4
-    KPznH16ON9p+Tt81vkWZLaOBVKeSlvePBKi+qeVNVoQ76yzZHs2IY1yHL+wJtDDH
-    XQ1tz7/q98hokRK3JkyBvkItIuBGImQQMd3A+NO3PWbAtWyB73Nn1tW9TEZshQyQ
-    XNsayW8+h6FuIKaq19uDI6mo8rc9CiHRisUnyXwr3MzPs4IXzQaX2D7bxc8JdwUh
-    Cr7xsRh1mcmsdXJDbhqWDZcvOaO2j4McmBraMpROXy4klks0UZ40MizyhlAwa4CJ
-    B3op/bH09X80Cz+Cw32uyDEH+Gc9/ght/FPikOyEhhr3JDZx5MuImI0aY7O+PZg4
-    JEyQxfr9xxUtA5GjOksFfyP5R+yGqs9XjJM=
-    -----END CERTIFICATE-----
-    -----BEGIN CERTIFICATE-----
-    MIIEojCCAwqgAwIBAgIRAJ2WzPQEoyjvZmsZccwebk4wDQYJKoZIhvcNAQELBQAw
-    aTEeMBwGA1UEChMVbWtjZXJ0IGRldmVsb3BtZW50IENBMR8wHQYDVQQLDBZub2Uu
-    Z29uemFsZXpATkdPTloxTUwxMSYwJAYDVQQDDB1ta2NlcnQgbm9lLmdvbnphbGV6
-    QE5HT05aMU1MMTAeFw0xODA4MzEwNDAxMTFaFw0yODA4MzEwNDAxMTFaMGkxHjAc
-    BgNVBAoTFW1rY2VydCBkZXZlbG9wbWVudCBDQTEfMB0GA1UECwwWbm9lLmdvbnph
-    bGV6QE5HT05aMU1MMTEmMCQGA1UEAwwdbWtjZXJ0IG5vZS5nb256YWxlekBOR09O
-    WjFNTDEwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQDUqBQY+TWf0pe5
-    Zvt7xLOe8XVlRSMOOjOTS+GBYak8IAAGt6vMPqhIyt4mtvegUhrJfnlqMXFMIPrI
-    Wq/6DWsnovlumn1IwmGtE5TGoFR1DiKZFtcWVRriLzumoAIgAVCxfCt+gYj04QXh
-    4F2BUuAIVc87W4bUvoyEmYWHKlDb2BeXv5Y/u+a2QZ1AXi6Gtl05y9RG6dl9PZUs
-    aKGwfZDY0mfC4jRb7e1KVZm0ExRefPC0/RPQ9whiSt1v91exNgwCdB++PIhz/Jxn
-    NJu0xykTIAJB91vkWGnfxeiXjvR9pEEARhqwBm+aAD55OP7sqgM1WRzHupdC/+jW
-    4f98B0LAfqiH0n2G3k7AUEA3fUUzINo2NOop3R95QTJ6n9U8yGluP55oc4EcIjC+
-    X7xx9wrIGRqrqOEzaqbGuv1JdFripGsKjSKeCpOF9DF/tOvcuBrlnSqDLstTmCAm
-    zFJ4e5SA+hV563RdnSCwGmizQ/aRBeslfcbHbOo4nSyyIOe5j6ECAwEAAaNFMEMw
-    DgYDVR0PAQH/BAQDAgIEMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFLz+
-    4e//Fb8e3ZYpICEgLotQzISXMA0GCSqGSIb3DQEBCwUAA4IBgQBGacro6zI7+S+y
-    6upDjWA0cQOX4ZzwEXsYhjhoCnHl3kjXQgWWDGXa/2LO+/Wbt65Xrxl5oY7yYBZ7
-    XR0NoOm/9ffGlzc03xnkpH2HsrG66SnpjtwDY5MTMy/EC/G1P2cVgfT6B1uv0K6F
-    WBB4rH/BxTSCV+5IR8Sj+V4UZF3Q4Zn26Hqe6TNIL3X8R2gxlxqb6GGCR8ibE4vz
-    bu9lIt1X7IkNZQFo8zfuNpQy08ZITmDrOEzJTSD2DgCh5Tmyj90fY97VeW3DO/Cy
-    bN2Pkb7A6/wObVEoYGp6MvN3P8DqCdi7L9aYWj9eOvbVwlfvpIVrMk5CNxFl3RK2
-    bslzbEwPib2BI433iqF4wYGCTBYEWsifplT2BmgQYG+stJpINVtuW5gJNNRwF8Gq
-    Bye7QHUVdi8Z6dRPuZXSOSUlIFzQsvu5A1/oTAa6oQ4xcf3FHkSLN71fegDc+O7Q
-    KfYbBEmxi5zlzS50JM4CGgmGu2ceQoetmsdvb5+jsxwQqb0cI5Y=
-    -----END CERTIFICATE-----
-  key: |
-    -----BEGIN PRIVATE KEY-----
-    MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC0ZpPxWI/0ctQa
-    cqAdAyhaBItj+pK8640+LpKYnkfIKdVTu+sS+647FbVfvOuM4I8JB+80/8QoV6nU
-    8p1BY12HtWGFDfhSn2GfbuQMWLizaVEOuWUzZp3/H6YI/sUHEHn9zPRqCC4QJxFr
-    hK1+753w4maAWHrm73bC/XKpQekpBJUF4vs/oqn4DfHebM9PcprfEGXfR5PPy1Rv
-    H/bAZzk3LzBbEiNv4TqfxWJ8L7rc/vGUMX6a1qLimSir0UAkh0A8edIFiSATciAV
-    ZLNjT8hCWEIvRqEcNrD7Dfsi9C5c88AbY4C/qwOVlcVjMg+Fy1SnlTg2R/Hj4Z4f
-    Ln5865d9AgMBAAECggEBALKF/IvO/46CACI4IvjzAgCrFKIY+xOX6wuJHSuJHzIX
-    K/QUOBpuFEqGPhoDI/si0om2X2NMZHsj3X5NpY9q3MkKlvoMDBz/eqVDIMyTFBz/
-    8OYoU9zdBSfO0wl9zc8i4AZox8sSUztK3jNPdj3ytJMICTWj2eQlP5rRI6IaBrm+
-    E++kpwtpjL+ku/JUTk2xr8Kfyy/3rAqOcMC0aDGTVbE6t24hFzUfdtR4yzbKAIaL
-    vc3eBD2OBDGDvalabjDKpfpOk1/43zC+a6Rx7GCRd828/Qgs2Jq1j3iq86nhVnkO
-    3ZbLjXDLi3QNUXWTBSmdML2pM7yqljfbUH52eIYQLuUCgYEA5KfeFZvNcw9x+NFO
-    B/6w2jKIu1vjjaOg9PP5hShzesjxC4EGUm7CIhqS2HB99bRmMpaix/a8rIJD5c0i
-    zk4U5lKID5EiVblEzc3VHYEZIcfK5ARiLj3n3DsnGR1DmxbpgQbWJ8lgx5/ME3t+
-    kI/bvMXiNKvOxblcPU984yovI48CgYEAyflqsL0Krfkle0Frpy5GCBo67pOwhakT
-    K3KWgc0VjhsgorH2q2npLiTIcB0g7o0o/lyGhb500E6H+Jb9pPpDy0uZ/UpduRGV
-    mkxGj86Og9c0CsblkRATDYzFcb0qpqk3vHFgIXFAWGfcYBYomb2KN9plpVT+li8a
-    B+ZmClF3XjMCgYEArjQehQQAkKqxwElmU7z87CAX//ZP9Xc2h6jg70wUPvWcf5E7
-    Sc5MZUMtoWyC6pEYU25kckhPEnbkV83juJ3QWnGCa6m9KOZPvyQUO7hBd3UJ5JJa
-    YrSTUzxV21JqUVwxZjXZLtLDwxLBng42LNkNJlL0tgA3Nni0B5npogBfjY0CgYEA
-    yUMrV7bpH3e4K9yDA/MOgiBxPTAapPZYTeE/rVTJ9/N8T+N65FEDtaGdwmqkWFJ9
-    2QomWrvw92pqAAOl+XIRgFFzv30Na8/j/f+oCMFSLnqSN3L/a9BSzBvM3IweJjlV
-    ewiXPHv4HKBSb8Vk695+Dy4oP9o0Xz/MdrbWU83eXxUCgYAJ9HTAWNRnzISW3O03
-    vkJ1rOaaTXxYE+/FWSIRzziWmqiIqw189mZfJCAnfzgedVsIbPGxu8tBYwwlqTZx
-    cSoThZswwktZoPYEzictH8OOuCwwIG5smbM4PQIcvsTTV2f/+0hHkgqc/HA/2ws5
-    7pJCGkkQS+fTMo4TW8vpOv46pw==
-    -----END PRIVATE KEY-----
-rancher_rke_version: 0.2.4
-rancher_kubectl_version: 1.14.3
+rancher_rke_install: false
+rancher_rke_cluster_name: molecule
+
 rancher_helm_version: 2.14.1
+rancher_helm_chart_install: false
+rancher_helm_chart_values:
+  hostname: rancher.molecule.noeg.wtf
 
-rancher_docker_packages:
-  - docker-ce-18.09.6-3.el7
-  - docker-ce-cli-18.09.6-3.el7
-  - containerd.io-1.2.5-3.1.el7
+rancher_version: 2.2.4
+rancher_kubectl_version: 1.14.3
+rancher_rke_version: 0.2.4
 
-rancher_create_dns_records: false
-rancher_dns_server: dc.dev.noe.local
-rancher_dns_zone: dev.noe.local
-
-rancher_create_vms: false
 rancher_user: vagrant
 rancher_user_ssh_key: |
   -----BEGIN RSA PRIVATE KEY-----
@@ -158,45 +42,43 @@ rancher_user_ssh_key: |
   NE5OgEXk2wVfZczCZpigBKbKZHNYcelXtTt/nP3rsCuGcM4h53s=
   -----END RSA PRIVATE KEY-----
 
-rancher_nodes: []
-# - hostname: rancher-0
-#   role: [controlplane,etcd,worker]
-#   ip: 172.31.51.30
-#   netmask: 255.255.255.0
-#   gw: 172.31.51.254
-#   dns_servers:
-#     - 172.31.3.2
-# - hostname: rancher-1
-#   role: [controlplane,etcd,worker]
-#   ip: 172.31.51.31
-#   gw: 172.31.51.254
-#   netmask: 255.255.255.0
-#   dns_servers:
-#     - 172.31.3.2
-# - hostname: rancher-2
-#   role: [controlplane,etcd,worker]
-#   ip: 172.31.51.32
-#   gw: 172.31.51.254
-#   netmask: 255.255.255.0
-#   dns_servers:
-#     - 172.31.3.2
+rke_nodes: []
+# - address: 172.28.128.3
+#   user: vagrant
+#   role: '[controlplane,etcd,worker]'
 
-rancher_vmware_config:
-  hostname: vcenter.noe.local
-  username: administrator@vsphere.local
-  password: changeme
-  folder: rancher
-  datacenter: garage
-  cluster: r610
-  datastore: vsanDatastore
-  template: template-centos-7.6-1560136075
-  hardware:
-    num_cpus: 2
-    memory_mb: 8192
-  guest_id: centos7_64Guest
-  network_name: vxw-dvs-62-virtualwire-4-sid-5001-openshift
-  disk: []
-# - size_gb: 40
-#   type: thin
-# - size_gb: 200
-#   type: thin
+# rke_cloud_provider:
+#   name: vsphere
+#   vsphereCloudProvider:
+#     global:
+#       insecure-flag: true
+#       user: administrator@vsphere.local
+#       password: changeme
+#       datacenters: garage
+#     virtual_center:
+#       vcenter.noeg.wtf: {}
+#     workspace:
+#       server: vcenter.noeg.wtf
+#       datacenter: garage
+#       folder: rancher
+#       default-datastore: vsanDatastore
+
+# rke_storage_class:
+#   apiVersion: storage.k8s.io/v1
+#   kind: StorageClass
+#   metadata:
+#     annotations:
+#       storageclass.beta.kubernetes.io/is-default-class: "true"
+#       storageclass.kubernetes.io/is-default-class: "true"
+#     name: vmware-thin
+#   parameters:
+#     datastore: vsanDatastore
+#     diskformat: thin
+#     fstype: ext4
+#   provisioner: kubernetes.io/vsphere-volume
+#   reclaimPolicy: Delete
+#   volumeBindingMode: Immediate
+
+rancher_letsencrypt_setup: false
+rancher_cloudflare_email: noe.a.gonzalez@gmail.com
+rancher_cloudflare_api_key: abcd1234
