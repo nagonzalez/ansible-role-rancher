@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    certmanager.k8s.io/acme-challenge-type: dns01
+    certmanager.k8s.io/acme-dns01-provider: cloudflare
+    certmanager.k8s.io/issuer: rancher-letsencrypt-{{ rancher_letsencrypt_env }}
+  namespace: cattle-system
+  name: rancher
+spec:
+  tls:
+  - hosts:
+    - {{ rancher_helm_chart_values['hostname'] }}
+    secretName: tls-rancher-ingress-letsencrypt-{{ rancher_letsencrypt_env }}

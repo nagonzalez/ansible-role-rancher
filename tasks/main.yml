@@ -1,21 +1,23 @@
 ---
 # tasks file for ansible-role-rancher
 
-# configure dns records
-- include: dns.yml
-  when: rancher_create_dns_records | bool
-
-# create rancher vms
-- include: vm.yml
-  when: rancher_create_vms | bool
-
-# install docker
-- include: docker.yml
-
-# install rancher requirements
+# install rke requirements
 - include: requirements.yml
 
-# install rancher
-- include: install.yml
-  tags:
-    - rancher_install
+# install rke
+- include: rke.yml
+  when: rancher_rke_install | bool
+
+# install rancher via helm
+- include: rancher.yml
+  when: rancher_helm_chart_install | bool
+
+# configure storage class
+- include: storage-class.yml
+  when:
+    - rancher_rke_install | bool
+    - rke_storage_class is defined
+
+# configure Let's Encrypt
+- include: lets-encrypt.yml
+  when: rancher_letsencrypt_setup | bool

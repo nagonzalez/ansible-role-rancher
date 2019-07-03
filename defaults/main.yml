@@ -80,5 +80,7 @@ rke_nodes: []
 #   volumeBindingMode: Immediate
 
 rancher_letsencrypt_setup: false
+rancher_letsencrypt_env: staging
+rancher_letsencrypt_url: https://acme-staging-v02.api.letsencrypt.org/directory
 rancher_cloudflare_email: noe.a.gonzalez@gmail.com
-rancher_cloudflare_api_key: abcd1234
+rancher_cloudflare_api_key: abcdef123456

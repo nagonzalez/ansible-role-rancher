@@ -1,0 +1,20 @@
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Issuer
+metadata:
+  name: rancher-letsencrypt-{{ rancher_letsencrypt_env }}
+  namespace: cattle-system
+spec:
+  acme:
+    email: {{ rancher_cloudflare_email }}
+    server: {{ rancher_letsencrypt_url }}
+    privateKeySecretRef:
+      name: rancher-letsencrypt-{{ rancher_letsencrypt_env }}-key
+    dns01:
+      providers:
+      - name: cloudflare
+        cloudflare:
+          email: {{ rancher_cloudflare_email }}
+          apiKeySecretRef:
+            name: cloudflare-api-key
+            key: api-key
