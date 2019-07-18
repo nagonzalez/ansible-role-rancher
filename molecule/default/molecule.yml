@@ -25,7 +25,7 @@ provisioner:
       rancher:
         rancher_rke_install: true
         rancher_helm_chart_install: true
-        rancher_letsencrypt_setup: true
+        rancher_letsencrypt_setup: false
         rke_nodes:
           - address: 172.28.128.3
             user: vagrant
