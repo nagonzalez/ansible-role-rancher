@@ -6,7 +6,7 @@ rancher_rke_cluster_name: molecule
 rancher_helm_version: 2.14.1
 rancher_helm_chart_install: false
 rancher_helm_chart_values:
-  hostname: rancher.molecule.noeg.wtf
+  hostname: rancher.172.28.128.3.xip.io
 
 rancher_version: 2.2.4
 rancher_kubectl_version: 1.14.3
