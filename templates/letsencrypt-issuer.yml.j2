@@ -2,19 +2,19 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-{{ rancher_letsencrypt_env }}
+  name: letsencrypt-{{ letsencrypt_env }}
   namespace: kube-system
 spec:
   acme:
-    email: {{ rancher_cloudflare_email }}
-    server: {{ rancher_letsencrypt_url }}
+    email: {{ cloudflare_email }}
+    server: {{ letsencrypt_url }}
     privateKeySecretRef:
-      name: letsencrypt-{{ rancher_letsencrypt_env }}-key
+      name: letsencrypt-{{ letsencrypt_env }}-key
     dns01:
       providers:
       - name: cloudflare
         cloudflare:
-          email: {{ rancher_cloudflare_email }}
+          email: {{ cloudflare_email }}
           apiKeySecretRef:
             name: cloudflare-api-key
             key: api-key

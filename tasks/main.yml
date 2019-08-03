@@ -1,23 +1,15 @@
 ---
 # tasks file for ansible-role-rancher
 
-# install rke requirements
+# install module requirements
 - include: requirements.yml
 
-# install rke
-- include: rke.yml
-  when: rancher_rke_install | bool
+# install helm
+- include: helm.yml
 
 # install rancher via helm
 - include: rancher.yml
-  when: rancher_helm_chart_install | bool
-
-# configure storage class
-- include: storage-class.yml
-  when:
-    - rancher_rke_install | bool
-    - rke_storage_class is defined
 
 # configure Let's Encrypt
 - include: lets-encrypt.yml
-  when: rancher_letsencrypt_setup | bool
+  when: letsencrypt_setup | bool

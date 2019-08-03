@@ -1,0 +1,64 @@
+---
+- name: download helm
+  unarchive:
+    src: "https://storage.googleapis.com/kubernetes-helm/helm-v{{ helm_version }}-linux-amd64.tar.gz"
+    dest: /tmp
+    remote_src: true
+
+- name: copy helm
+  copy:
+    src: /tmp/linux-amd64/helm
+    dest: /sbin/helm
+    remote_src: true
+    mode: 0755
+
+- name: add tiller service account
+  k8s:
+    state: present
+    definition:
+      apiVersion: v1
+      kind: ServiceAccount
+      metadata:
+        name: tiller
+        namespace: kube-system
+
+- name: make tiller service account cluster-admin
+  k8s:
+    state: present
+    definition:
+      apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      metadata:
+        name: tiller
+      roleRef:
+        apiGroup: rbac.authorization.k8s.io
+        kind: ClusterRole
+        name: cluster-admin
+      subjects:
+        - kind: ServiceAccount
+          name: tiller
+          namespace: kube-system
+
+- name: Set up Helm and Tiller.
+  command: helm init --service-account tiller
+  register: helm_init_result
+  changed_when: "'already installed' not in helm_init_result.stdout"
+
+- name: Get Tiller's ClusterIP.
+  k8s:
+    api_version: v1
+    kind: Service
+    name: tiller-deploy
+    namespace: kube-system
+  register: tiller_service
+
+- name: Set the Helm host and port
+  set_fact:
+    l_helm_host: "{{ tiller_service.result.spec.clusterIP }}"
+    l_helm_port: "{{ tiller_service.result.spec.ports[0].port }}"
+
+- name: Wait for Tiller to become responsive.
+  wait_for:
+    host: "{{ l_helm_host }}"
+    port: "{{ l_helm_port }}"
+    state: started

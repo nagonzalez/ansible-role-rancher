@@ -1,5 +1,0 @@
----
-- name: add default storage class
-  k8s:
-    state: present
-    definition: "{{ rke_storage_class }}"

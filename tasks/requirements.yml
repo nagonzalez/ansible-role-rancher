@@ -1,41 +1,17 @@
 ---
-- name: ensure rancher user .ssh directory exists
-  file:
-    state: directory
-    path: "/home/{{ rancher_user }}/.ssh"
-    mode: 0700
-    owner: "{{ rancher_user }}"
-    group: "{{ rancher_user }}"
+- name: install required yum packages
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - epel-release
+    - git
+    - python2-pip
+    - python2-openshift
 
-- name: add ssh private key
-  copy:
-    dest: "/home/{{ rancher_user }}/.ssh/id_rsa"
-    owner: "{{ rancher_user }}"
-    group: "{{ rancher_user }}"
-    mode: 0600
-    content: "{{ rancher_user_ssh_key }}"
-
-- name: download rke
-  get_url:
-    url: "https://github.com/rancher/rke/releases/download/v{{ rancher_rke_version }}/rke_linux-amd64"
-    dest: /usr/local/bin/rke
-    mode: 0755
-
-- name: download kubectl
-  get_url:
-    url: "https://storage.googleapis.com/kubernetes-release/release/v{{ rancher_kubectl_version }}/bin/linux/amd64/kubectl"
-    dest: /sbin/kubectl
-    mode: 0755
-
-- name: download helm
-  unarchive:
-    src: "https://storage.googleapis.com/kubernetes-helm/helm-v{{ rancher_helm_version }}-linux-amd64.tar.gz"
-    dest: /tmp
-    remote_src: true
-
-- name: copy helm
-  copy:
-    src: /tmp/linux-amd64/helm
-    dest: /sbin/helm
-    remote_src: true
-    mode: 0755
+- name: install required pip packages
+  pip:
+    name: "{{ item }}"
+  loop:
+    - future
+    - pyhelm

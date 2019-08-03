@@ -3,5 +3,6 @@
   hosts: all
   become: true
   roles:
+    - role: ansible-role-rke-node
     - role: ansible-role-rke
     - role: ansible-role-rancher
