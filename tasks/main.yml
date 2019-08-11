@@ -1,10 +1,7 @@
 ---
 # tasks file for ansible-role-rancher
 
-# install module requirements
-- include: requirements.yml
-
-# install helm
+# ensure we can talk to helm
 - include: helm.yml
 
 # install rancher via helm

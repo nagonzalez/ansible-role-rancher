@@ -9,6 +9,6 @@ letsencrypt_setup: false
 letsencrypt_env: staging
 letsencrypt_url: https://acme-staging-v02.api.letsencrypt.org/directory
 
-rancher_version: 2.2.6
+rancher_version: 2.2.7
 rancher_helm_chart_values:
   hostname: rancher.172.28.128.3.xip.io

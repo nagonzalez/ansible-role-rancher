@@ -1,0 +1,4 @@
+# modules we want to use. Kinda like a Puppetfile
+- src: https://github.com/nagonzalez/ansible-role-helm
+  version: master
+  name: nagonzalez.helm
