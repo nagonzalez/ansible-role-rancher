@@ -5,4 +5,5 @@
   roles:
     - role: ansible-role-rke-node
     - role: ansible-role-rke
+    - role: ansible-role-helm
     - role: ansible-role-rancher

@@ -1,10 +1,10 @@
 ---
 # tasks file for ansible-role-rancher
 
-# ensure we can talk to helm
-- include: helm.yml
+# install cert-manager helm chart
+- include: cert-manger.yml
 
-# install rancher via helm
+# install rancher helm chart
 - include: rancher.yml
 
 # configure Let's Encrypt

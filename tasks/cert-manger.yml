@@ -1,8 +1,9 @@
 ---
-- name: install rancher helm chart
+- name: install cert-manager helm chart
   include_role:
     name: nagonzalez.helm
     tasks_from: charts
   vars:
     helm_charts:
-      - "{{ rancher_helm_chart }}"
+      - "{{ cert_manager_helm_chart }}"
+

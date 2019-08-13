@@ -3,12 +3,33 @@
 cloudflare_email: noe.a.gonzalez@gmail.com
 cloudflare_api_key: abcdef123456
 
-helm_version: 2.14.3
-
 letsencrypt_setup: false
 letsencrypt_env: staging
 letsencrypt_url: https://acme-staging-v02.api.letsencrypt.org/directory
 
 rancher_version: 2.2.7
-rancher_helm_chart_values:
-  hostname: rancher.172.28.128.3.xip.io
+
+cert_manager_helm_chart:
+  name: cert-manager
+  version: v0.5.2
+  release: cert-manager
+  namespace: kube-system
+  source:
+    type: git
+    location: https://github.com/jetstack/cert-manager.git
+    reference: 'v0.5.2'
+    path: contrib/charts/cert-manager
+  state: present
+  values: {}
+
+rancher_helm_chart:
+  name: rancher
+  version: "{{ rancher_version }}"
+  release: rancher
+  namespace: cattle-system
+  source:
+    type: repo
+    location: https://releases.rancher.com/server-charts/stable
+  state: present
+  values:
+    hostname: rancher.172.28.128.3.xip.io

@@ -1,4 +1,0 @@
----
-- name: run helm role
-  include_role:
-    name: nagonzalez.helm
