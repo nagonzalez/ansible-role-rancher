@@ -25,10 +25,28 @@ provisioner:
   inventory:
     host_vars:
       rancher:
+        # RKE VARS
         rke_nodes:
           - address: 172.28.128.3
             user: vagrant
             role: [controlplane, etcd, worker]
+
+        # RANCHER VARS
+        cloudflare_setup: false
+        cloudflare_api_key: changeme
+
+        rancher_helm_chart:
+          name: rancher
+          version: "{{ rancher_version }}"
+          release: rancher
+          namespace: cattle-system
+          source:
+            type: repo
+            location: https://releases.rancher.com/server-charts/stable
+          state: present
+          values:
+            hostname: rancher.molecule.noeg.wtf
+
   lint:
     name: ansible-lint
     options:

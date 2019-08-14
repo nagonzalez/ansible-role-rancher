@@ -1,24 +1,26 @@
 ---
 # defaults file for ansible-role-rancher
+cloudflare_setup: false
 cloudflare_email: noe.a.gonzalez@gmail.com
 cloudflare_api_key: abcdef123456
 
-letsencrypt_setup: false
 letsencrypt_env: staging
 letsencrypt_url: https://acme-staging-v02.api.letsencrypt.org/directory
 
 rancher_version: 2.2.7
 
+cert_manager_required_manifests:
+  - https://raw.githubusercontent.com/jetstack/cert-manager/{{ cert_manager_helm_chart.version }}/deploy/manifests/00-crds.yaml
+  - https://raw.githubusercontent.com/jetstack/cert-manager/{{ cert_manager_helm_chart.version }}/deploy/manifests/01-namespace.yaml
+
 cert_manager_helm_chart:
   name: cert-manager
-  version: v0.5.2
+  version: v0.9.1
   release: cert-manager
-  namespace: kube-system
+  namespace: cert-manager
   source:
-    type: git
-    location: https://github.com/jetstack/cert-manager.git
-    reference: 'v0.5.2'
-    path: contrib/charts/cert-manager
+    type: repo
+    location: https://charts.jetstack.io
   state: present
   values: {}
 

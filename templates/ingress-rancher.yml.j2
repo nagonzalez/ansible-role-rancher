@@ -11,5 +11,5 @@ metadata:
 spec:
   tls:
   - hosts:
-    - {{ rancher_helm_chart_values['hostname'] }}
+    - {{ rancher_helm_chart['values']['hostname'] }}
     secretName: tls-rancher-letsencrypt-{{ letsencrypt_env }}

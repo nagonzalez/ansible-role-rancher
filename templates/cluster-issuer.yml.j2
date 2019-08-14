@@ -10,9 +10,8 @@ spec:
     server: {{ letsencrypt_url }}
     privateKeySecretRef:
       name: letsencrypt-{{ letsencrypt_env }}-key
-    dns01:
-      providers:
-      - name: cloudflare
+    solvers:
+    - dns01:
         cloudflare:
           email: {{ cloudflare_email }}
           apiKeySecretRef:

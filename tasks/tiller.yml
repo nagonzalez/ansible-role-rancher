@@ -1,0 +1,5 @@
+---
+- name: configure tiller connectivity
+  include_role:
+    name: nagonzalez.helm
+    tasks_from: tiller
