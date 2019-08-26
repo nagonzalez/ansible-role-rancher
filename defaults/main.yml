@@ -7,7 +7,7 @@ cloudflare_api_key: abcdef123456
 letsencrypt_env: staging
 letsencrypt_url: https://acme-staging-v02.api.letsencrypt.org/directory
 
-rancher_version: 2.2.7
+rancher_version: 2.2.8
 
 cert_manager_required_manifests:
   - https://raw.githubusercontent.com/jetstack/cert-manager/{{ cert_manager_helm_chart.version }}/deploy/manifests/00-crds.yaml
