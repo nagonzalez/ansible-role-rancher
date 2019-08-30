@@ -5,14 +5,5 @@
 - include: tiller.yml
   when: l_helm_host is not defined or l_helm_port is not defined
 
-# install cert-manager helm chart
-- include: cert-manger.yml
-
 # install rancher helm chart
 - include: rancher.yml
-
-# this will use an opinionated Cloudflare DNS01 implementation
-# add cert-manager (clusterissuer) & configure rancher to use it
-# doing so will simplify setup as we'll have a single issuer to worry about cluster wide
-- include: cloudflare.yml
-  when: cloudflare_setup | bool

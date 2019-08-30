@@ -12,7 +12,7 @@ lint:
 platforms:
   - name: rancher
     box: centos/7
-    cpus: 1
+    cpus: 4
     memory: 4096
     interfaces:
       - auto_config: true
@@ -32,9 +32,6 @@ provisioner:
             role: [controlplane, etcd, worker]
 
         # RANCHER VARS
-        cloudflare_setup: false
-        cloudflare_api_key: changeme
-
         rancher_helm_chart:
           name: rancher
           version: "{{ rancher_version }}"
@@ -45,7 +42,7 @@ provisioner:
             location: https://releases.rancher.com/server-charts/stable
           state: present
           values:
-            hostname: rancher.molecule.noeg.wtf
+            hostname: rancher.172.28.128.3.xip.io
 
   lint:
     name: ansible-lint
