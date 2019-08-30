@@ -31,19 +31,6 @@ provisioner:
             user: vagrant
             role: [controlplane, etcd, worker]
 
-        # RANCHER VARS
-        rancher_helm_chart:
-          name: rancher
-          version: "{{ rancher_version }}"
-          release: rancher
-          namespace: cattle-system
-          source:
-            type: repo
-            location: https://releases.rancher.com/server-charts/stable
-          state: present
-          values:
-            hostname: rancher.172.28.128.3.xip.io
-
   lint:
     name: ansible-lint
     options:

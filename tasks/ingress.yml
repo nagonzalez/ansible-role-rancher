@@ -1,0 +1,5 @@
+---
+- name: patch rancher ingress to use cert from ClusterIssuer
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'ingress-rancher.yml.j2') }}"

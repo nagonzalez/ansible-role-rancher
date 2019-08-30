@@ -7,3 +7,7 @@
 
 # install rancher helm chart
 - include: rancher.yml
+
+# patch ingress when using ClusterIssuer
+- include: ingress.yml
+  when: cert_manager_cluster_issuer | bool
